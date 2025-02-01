@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${book.id} == null ? 'Додати книгу' : 'Редагувати книгу'">Форма книги</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+<header>
+    <h1 th:text="${book.id} == null ? 'Додати книгу' : 'Редагувати книгу'"></h1>
+</header>
+
+<section>
+    <form th:action="@{/books/save}" th:object="${book}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label>Назва книги:</label>
+            <input type="text" th:field="*{title}" required/>
+        </div>
+        <div>
+            <label>ПІБ автора:</label>
+            <input type="text" th:field="*{author}" required/>
+        </div>
+        <div>
+            <label>Рік випуску:</label>
+            <input type="number" th:field="*{year}" required/>
+        </div>
+        <div>
+            <label>Жанр:</label>
+            <input type="text" th:field="*{genre}" required/>
+        </div>
+        <div>
+            <label>Кількість сторінок:</label>
+            <input type="number" th:field="*{pages}" required/>
+        </div>
+        <div>
+            <label>Опис:</label>
+            <textarea th:field="*{description}" rows="5"></textarea>
+        </div>
+        <div>
+            <button type="submit">Зберегти</button>
+            <a th:href="@{/books}">Скасувати</a>
+        </div>
+    </form>
+</section>
+
+<footer></footer>
+</body>
+</html>
