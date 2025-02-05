@@ -2,6 +2,7 @@ package com.example.bookapp.service;
 
 import com.example.bookapp.model.Book;
 import com.example.bookapp.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.Optional;
 public class BookService {
     private final BookRepository bookRepository;
 
+    @Autowired
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }

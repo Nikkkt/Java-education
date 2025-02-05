@@ -45,7 +45,9 @@
             <td>
                 <a th:href="@{'/books/edit/' + ${book.id}}">Редагувати</a> |
                 <a th:href="@{'/books/delete/' + ${book.id}}"
-                   onclick="return confirm('Ви впевнені, що хочете видалити цю книгу?');">Видалити</a>
+                   onclick="return confirm('Ви впевнені, що хочете видалити цю книгу?');">
+                    Видалити
+                </a>
             </td>
         </tr>
         </tbody>
