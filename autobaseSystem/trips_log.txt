@@ -1,0 +1,2 @@
+Driver: Petro, Truck: MAN, Destination: Kyiv
+Driver: Petro, Truck: MAN, Destination: Kyiv
